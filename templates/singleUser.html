@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+        div.spacing{
+            padding: 0cm 1cm;
+        }
+        p.font{
+            font-size: 12px;
+        }
+</style>
+
+<h3 style='text-align: center'> Blog Posts </h3>
+
+<div class='spacing'>
+    
+    {% for entry in user_post %}
+    
+    <a href='/blog?id={{entry.id}}'>
+<p>{{ entry.title }}</p></a>
+        <p>{{ entry.body}}</p>
+    <p class='font'> Written by <a href='/blog?user={{owner.username}}'>{{ owner.username }}</a>
+    </p>
+  <hr>
+
+
+    {% endfor %}
+</div>
+{% endblock %}

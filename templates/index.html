@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    div.spacing{
+        padding: 0cm 1cm;
+    }
+    h3.pad{
+        padding: 0cm 1cm;
+    }
+</style>
+
+<h3 class='pad'>User list</h3>
+
+    {% for username in users  %}
+
+<div class='spacing'>
+    <a href='/blog?user={{username.username}}'>
+        <li>{{ username.username }}</li>
+    </a>
+</div>
+    {% endfor %}
+  
+{% endblock %}
